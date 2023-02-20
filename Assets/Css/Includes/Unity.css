@@ -1,0 +1,22 @@
+
+
+unity-assetstore {
+    display: grid;
+    width: clamp( 50px, 5vw, 350px );
+    aspect-ratio: 1 / 1;
+    border-radius: 5rem;
+    background-color: transparent;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/5969/5969294.png);
+    background-size: cover;
+    filter: drop-shadow( #ffab00 0 0 5px );
+    color: #006400;
+    position: fixed;
+    top: 2.5%;
+    right: 2.5%;
+    z-index: 9;
+    transition: .3s;
+} unity-assetstore:hover {
+    filter: drop-shadow( #fff 0 0 13px );
+} unity-assetstore:hover:after {
+    content: attr(name) " "; position: absolute; bottom: -50%; color: #006400;
+}
