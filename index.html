@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="Assets/Css/Import.css">
     <script src="Assets/scripts/globals.js" defer></script>
     <script src="Assets/scripts/Includes/sidebar.js" defer></script>
+    <style >
+        
+    </style>
 </head>
 <body>
     <app-bar></app-bar>
@@ -90,5 +93,22 @@
     <app-home>
     </app-home>
     
+    <script >
+        let closeBtn = document.querySelector( "close-btn" ),
+            drawer = document.querySelector( "drawer" ),
+            sidebarIcons = document.querySelectorAll( "side-bar icon" );
+        
+        closeBtn.addEventListener( "click", ev => {
+            drawer.style.width = "0";
+            drawer.style.visibility = "hidden";
+        } );
+        
+        sidebarIcons.forEach( s => {
+            s.addEventListener( "click", ev => {
+                drawer.style.visibility = "visible";
+                drawer.style.width = "clamp( 100px, 70%, 300px )";
+            } );
+        } );
+    </script>
 </body>
 </html>
