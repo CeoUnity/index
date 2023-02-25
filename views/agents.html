@@ -1,0 +1,102 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Unity Guides</title>
+    
+    <link rel="icon" href="../Assets/pix/logo.svg" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/Css/Import.css">
+    <script src='../Assets/scripts/globals.js' defer></script>
+    <script src='../Assets/scripts/includes/appbar.js' defer></script>
+    <script src='../Assets/scripts/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <app-bar></app-bar>
+    <side-bar></side-bar>
+
+    <app-home>
+        <post>
+            <post-home>
+                <post-header>
+                    <t1>Creating Characters</t1>
+                </post-header>
+                <post-body>
+                    <t2> Parameters </t2> <br>
+                    boll 
+                    <cs>
+                        <ul>
+                            <t>Alive</t>
+                            <t>Idle</t>
+                            <t>Crawling</t>
+                            <t>Crouching</t>
+                            <t>Dashing</t>
+                            <t>Dangling</t>
+                            <t>Diving</t>
+                            <t>DoubleJumping</t>
+                            <t>FacingRight</t>
+                            <t>Firing</t>
+                            <t>FiringStop</t>
+                            <t>Flying</t>
+                            <t>Gliding</t>
+                            <t>Grounded</t>
+                            <t>Jetpacking</t>
+                            <t>Jumping</t>
+                            <t>LadderClimbing</t>
+                            <t>LookingUp</t>
+                            <t>MeleeAttack</t>
+                            <t>Pushing</t>
+                            <t>Running</t>
+                            <t>Swimming</t>
+                            <t>SwimmingIdle</t>
+                            <t>Walking</t>
+                            <t>WallClinging</t>
+                            <t>WallJumping</t>
+                            <t>CollidingLeft</t>
+                            <t>CollidingRight</t>
+                            <t>CollidingBelow</t>
+                            <t>CollidingAbove</t>
+                            <t>RectangleMeleeAttackStart</t>
+                        </ul>
+                    </cs>
+                    Int
+                    <cs>
+                        <ul>
+                            <t><txt>FiringDirection</txt> = 3</t>
+                            <t><txt>FlySpeed</txt> = 0</t>
+                            <t><txt>LadderClimbingSpeedX</txt> = 0</t>
+                            <t><txt>LadderClimbingSpeedY</txt> = 0</t>
+                            <t><txt>Speed</txt> = 0</t>
+                            <t><txt>xSpeed</txt> = 0</t>
+                            <t><txt>ySpeed</txt> = 0</t>
+                        </ul>
+                    </cs>
+                    Animator
+                    <cs>
+                        <ul>
+                            <li>Idle = Idle, Alive</li>
+                            <li>JumpAndFall = false( 
+                                Grounded, 
+                                Dashing,
+                                WalClinging,
+                                Jetpacking,
+                                Diving,
+                                LadderClimbing,
+                                MeleeAttack, 
+                                ),
+                                FiringDirection = 3,
+                                Alive = true
+                            </li>
+                            <li>ClimbingMove = LadderClimbing, LadderClimbingSpeedY &gt; 0.1</li>
+                            <li>Walk = Walking, Grounded</li>
+                        </ul>
+                    </cs>
+                </post-body>
+            </post-home>
+        </post>
+    </app-home>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+
+side-bar {
+    display: block;
+    height: 100%;
+    width: var(--drawer-width-closed); 
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: var(--panel);
+    overflow-x: hidden;
+    box-shadow: #00000090 0 0 15px;
+    transition: all .5s cubic-bezier(0.68, -0.55, 0, 1.31);
+  }
+  .drawer-closed {
+    height: 100%;
+    /* width: 0;  */
+    background-color: var( --panel );
+    overflow-x: hidden;
+  }
+  .drawer-opened {
+    height: 100%;
+    visibility: visible;
+    width: var(--drawer-width-opened); 
+    overflow-x: hidden;
+  }
+
+  drawer-header {
+    display: block;
+    position: sticky;
+    top: 0;
+    height: var(--drawer-header-height);
+    background: var(--dark);
+    box-shadow: #00000099 0 0 10px;
+  }
+
+  drawer-home {
+    display: block;
+    height: calc( 100% - var(--drawer-header-height) );
+  }
+
+  details {
+    /* padding: 8px 8px 8px 32px; */
+    text-decoration: none;
+    list-style: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    user-select: none;
+    transition: all .5s ease-in;
+  }
+  details[open] {
+    background: var(--card);
+    transition: all .2s ease-in;
+  }
+  summary {
+    cursor: pointer;
+    list-style: none;
+    width: 100%;
+    padding: 8px 8px 8px 32px;
+    transition: all .5s ease-in;
+  }
+  details-bg {
+    padding: 8px 0px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    transition: all .5s cubic-bezier(0.68, -0.55, 0, 1.31);
+  }
+
+  side-bar a,
+  drawer-item {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  side-bar a:hover,
+  drawer-item:hover,
+  summary:hover {
+    color: #f1f1f1;
+  }
+
+  side-bar .btn_close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+  }

@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Unity Guides</title>
+    
+    <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../Assets/Css/Import.css">
+    <script src="../Assets/scripts/globals.js" defer></script>
+</head>
+<body>
+    <appbar></appbar>
+
+    <main>
+        <h1>Corgi Steps</h1>
+        <article>
+            <card>
+                <h2>Creating a level</h2>
+                <ol>
+                    <li>
+                        <p>Add a camera with a camera controller</p>
+                        <small>Prefabs > Camera > Regular camera</small>
+                    </li>
+                    <li>
+                        <p>Ui Camera with input manager</p>
+                    </li>
+                    <li>
+                        <p>Add a game manager</p>
+                    </li>
+                    <li>
+                        <p>Add a LevelStart</p>
+                        <small>Prefabs > LevelManagers > LevelStart</small>
+                        <ol>
+                            <li>
+                                <small>Create a new game object and rename it LevelManager</small>
+                            </li>
+                            <li>
+                                <small>zero positions of those and make LevelStart child of LevelManager</small>
+                            </li>
+                            <li>
+                                <small>on LevelManager increase level bounds</small>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </card>
+            <card>
+                <h2>Importing an image asset</h2>
+                <ol>
+                    <li>
+                        <p>Filter mode: point no filter</p>
+                    </li>
+                    <li>
+                        <p>Compresion: None</p>
+                    </li>
+                    <li>
+                        <p>Pixels Per Unity</p>
+                    </li>
+                </ol>
+            </card>
+            <card>
+                <h2>Creating the avatar</h2>
+                <ol>
+                    <li>
+                        <p>adjust the sprites with sprite editor</p>
+                    </li>
+                    <li>
+                        <p>drag those pngs to scene to start creating the animations</p>
+                    </li>
+                    <li>
+                        <p>create a prefab</p>
+                    </li>
+                    <li>
+                        <p>Add a characther component to the player prefab</p>
+                    </li>
+                    <li>
+                        <p>Change Character type to player on Character component</p>
+                    </li>
+                    <li>
+                        <p>Change Player Id on Character component to Player1</p>
+                    </li>
+                    <li>
+                        <p>Click on the AutoBuild Player Character button on Character component</p>
+                    </li>
+                    <li>
+                        <p>Edit Player Character scripts on Character component</p>
+                    </li>
+                </ol>
+            </card>
+            <card>
+                <h2>Adding Player to the level spawn</h2>
+                <ol>
+                    <li>
+                        <p>On LevelManager choose the player on Player Prefabs component</p>
+                    </li>
+                </ol>
+            </card>
+            <card>
+                <h2>Camera Rig</h2>
+                <ol>
+                    <li>
+                        <p>Childs:</p>
+                        <ul>
+                            <li>RegularCamera</li>
+                            <li>CinemachineVirtualCamera</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>RegularCamera components:</p>
+                        <ul>
+                            <li>camera</li>
+                            <li>Flare Layer</li>
+                            <li>Audio Listener</li>
+                            <li>Parallax Camera</li>
+                            <li>CinemachineBrain</li>
+                            <li>Post-process Layer</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>CinemachineVirtualCamera</p>
+                        <ul>
+                            <li>CinemachineVirtualCamera</li>
+                            <li>Cinemachine Camera Controller</li>
+                            <li>inemachine Confiner</li>
+                        </ul>
+                    </li>
+                </ol>
+            </card>
+        </article>
+
+        <post>
+            <post-home>
+                <post-header>
+                    <t1>Create A Start Menu</t1>
+                </post-header>
+                <post-body>
+                    <ol>
+                        <li>
+                            <p>create a new scene</p>
+                        </li>
+                        <li>
+                            <p>create a new canvas as child of the scene with an img as a background</p>
+                            <ul>
+                                <li>Canvas Component:
+                                    <ol>
+                                        <li>Canvas Scaler
+                                            <ul>
+                                                <li>UI scale mode: Scale with screen size</li>
+                                                <li>Resolution:(4k) 3840 x 2160</li>
+                                                <li>Resolution:(hd) 1920 x 1080</li>
+                                                <li>the anchor points: hold( alt ) and select last option</li>
+                                                <li>the Texture Type of the img must be set as Sprite</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Create menu buttons
+                                    <ul>
+                                        <li>
+                                            create all buttons
+                                        </li>
+                                        <li>
+                                            create a new empty GO N rename it MainMenu
+                                            <ol>
+                                                <li>set the anchor points to scale to all directions</li>
+                                                <li>zero positions in Rect Transform</li>
+                                                <li>group all btns inside of it</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            Options Menu
+                                            <ol>
+                                                <li>create a new empty GO N rename it Options</li>
+                                                <li>set width: 1000 N height: 700</li>
+                                                <li>add a img as a child of Options</li>
+                                                <li>set anchors and zero positions</li>
+                                                <li>set the src img</li>
+                                                <li>add a text as a child of Options</li>
+                                                <li>create a new Slider as a child of Options</li>
+                                            </ol>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Creating the script for menu 
+                                    <ul>
+                                        <li>
+                                            create a new empty GO N rename it MenuManager
+                                        </li>
+                                        <li>
+                                            create a new script N make it child of MenuManager
+                                        </li>
+                                        <li>
+                                            <pre style="color: #27f;">
+using UnityEngine.SceneManagement;
+
+[SerializeField] private string carregarLevel;
+[SerializeField] private GameObject menuInicial;
+[SerializeField] private GameObject opcoes;
+
+public void Jogar() {
+    SceneManagemer.LoadScene( carregarLevel );
+}
+
+public void AbrirOpcoes() {
+    menuInicial.SetActive( false );
+    opcoes.SetActive( true );
+}
+
+public void FecharOpcoes() {
+    menuInicial.SetActive( true );
+    opcoes.SetActive( false );
+}
+
+public void SairDoJogo() {
+    Debug.Log( "Application.Quit" );
+    Application.Quit();
+}
+                                            </pre>
+                                        </li>
+                                        <li>
+                                            assign the script logic with butns
+                                        </li>
+                                        <li>
+                                            PlayBtn:
+                                            <ul>On Click
+                                                <li>drag the GO btn</li>
+                                                <li>mark: editor N runtime</li>
+                                                <li>set the function: MenuManager > Jogar</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            PlayBtn:
+                                            <ul>On Click
+                                                <li>drag the GO btn</li>
+                                                <li>mark: editor N runtime</li>
+                                                <li>set the function: MenuManager > Jogar</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </post-body>
+            </post-home>
+        </post>
+    </main>
+    
+    <script>
+        
+        
+    </script>
+</body>
+</html>
+
+<script>
+    GameManagers = {
+        Game Manager: {
+            lives 
+            game over scene 
+        },
+        Achievement Rules: {
+        },
+        MMTimeManager: {}
+    }
+
+    MMSoundManager = {
+        MMSoundManager: {}
+    }
+
+    UICamera = {
+        Camera: {},
+        Flaer Layer: {},
+        GUI Manager: {
+            HUD 
+            buttons 
+        },
+        Input Manager: {
+            input 
+            player id 
+            mobile detection 
+            movement controls 
+        }
+    }
+
+    CameraRig(
+        RegularCamera = {
+            Camera: {},
+            Flare Layer: {},
+            Audio Listener: {},
+            Parallax Camera: {},
+            CinemachineBrain: {},
+            Post-process Layer: {},
+        }
+        CinemachineVirtualCamera = {
+            CinemachineVirtualCamera: 
+            Cinemachine Camera Controller: {
+                follows a player 
+
+            }
+            Cinemachine Confiner: 
+        }
+    )
+
+    LevelManager = {
+        Level Manager: {
+            player prefab
+            debug spawn 
+            loading screen
+        }
+    }
+
+</script>
+
+        
+        

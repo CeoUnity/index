@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Unity Guides</title>
+    
+    <link rel="icon" href="../Assets/pix/logo.svg" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/Css/Import.css">
+    <script src='../Assets/scripts/globals.js' defer></script>
+    <script src='../Assets/scripts/includes/appbar.js' defer></script>
+    <script src='../Assets/scripts/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <app-bar></app-bar>
+    <side-bar></side-bar>
+
+    <app-home>
+        <post>
+            <post-home>
+                <post-header>
+                    <t1 color="#456">SAVE & LOAD SYSTEM in Unity</t1>
+                </post-header>
+                <post-body>
+                    <t2>PlayerScript</t2>
+                    <js>
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerScripts : MonoBehaviour
+{
+    public int level = 3,
+                health = 40;
+    
+    #region UI Methods
+
+    public void ChangeLevel( int amount ) {
+        level += amount;
+    }
+
+    public void ChangeHealth( int amount ) {
+        health += amount;
+    }
+
+    #endregion
+}
+                    </js>
+                </post-body>
+                <post-body>
+                    <t2>PlayerDataScript</t2>
+                    <js>
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class PlayerDataScript
+{
+    public int level, health;
+    public float[] position;
+
+    public PlayerData( Player player ) {
+        level = player.level;
+        health = player.health;
+
+        position = new floa[ 3 ];
+        position[0] = player.transform.position.x;
+        position[1] = player.transform.position.y;
+        position[2] = player.transform.position.z;
+    }
+
+}
+                        
+                        </js>
+                    </post-body>
+                    <post-body>
+                        <t2>SaveSystem</t2>
+                        <js>
+using UnityEngine;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
+public static class SaveSystem
+{
+    public static void SavePlayer( Player player ) {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/Player.fun";
+        FileStream stream = new FileStream( path, FileMode.Create );
+
+        PlayerData data = new PlayerData( player );
+    }
+}
+                        
+                        </js>
+                    </post-body>
+
+                    <t2></t2>
+                    <js></js>
+                </post-body>
+            </post-home>
+        </post>
+    </app-home>
+</body>
+</html>
